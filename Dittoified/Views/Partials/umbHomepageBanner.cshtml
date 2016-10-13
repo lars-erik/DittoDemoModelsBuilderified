@@ -1,0 +1,17 @@
+﻿@inherits DittoView<DittoDemo.ViewModels.BannerViewModel>
+
+@if (Model.View.IsVisible)
+{
+    <!-- Banner -->
+    <div id="banner-wrapper" style="background: url('@Model.View.BackgroundImage') center center no-repeat;">
+        <section id="banner">
+            <h2>@Model.View.Header</h2>
+            <span class="byline">@Model.View.SubHeader</span>
+			@if(Model.View.Link != null)
+			{
+            	<a href="@Model.View.Link.Url" class="button">@Model.View.LinkText</a>
+            }
+        </section>
+    </div>
+    <!-- /Banner -->
+}

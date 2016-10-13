@@ -1,0 +1,50 @@
+﻿@inherits UmbracoViewPage<UmbNewsOverview>
+@{
+    Layout = "umbLayout.cshtml";
+}
+<!-- Main -->
+<div id="main-wrapper">
+    <div id="main" class="container">
+        <div class="row">
+            <div class="12u skel-cell-mainContent">
+                <div class="content">
+                    <!-- Content -->
+                    <article class="is-page-content">
+                        <header>
+                            <h2>@Model.DisplayTitle</h2>
+                        </header>
+
+                        @foreach (var item in Model.Children<UmbNewsItem>())
+                        {
+                            // TODO: Paging
+
+                            <section>
+                                <h3><a href="@item.Url">@item.DisplayTitle</a></h3>
+                                <span class="byline">@item.Subheader</span>
+                                <ul class="meta">
+                                    <li class="timestamp">@item.DisplayDate.ToString("f")</li>
+                                </ul>
+
+                                @if (string.IsNullOrWhiteSpace(item.Image as string) == false)
+                                {
+                                    <a href="@item.Url" class="image image-full"><img src="@item.Image" alt="" /></a>
+                                }
+
+                                <p>@item.Extract</p>
+
+                                <a href="@item.Url" class="button">Continue Reading</a>
+                            </section>
+                        }
+                    </article>
+                    <!-- /Content -->
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="12u">
+                @{ Html.RenderPartial("umbFeatures"); }
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Main -->

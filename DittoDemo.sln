@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Dittoified", "Dittoified\", "{4C451D1C-9567-4A3E-90EF-314CDB4935F3}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_51600"
+		Debug.AspNetCompiler.PhysicalPath = "Dittoified\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51600\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_51600"
+		Release.AspNetCompiler.PhysicalPath = "Dittoified\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51600\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "51600"
+		SlnRelativePath = "Dittoified\"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ModelsBuilderified", "ModelsBuilderified\", "{A22434C5-284C-4612-9C34-0B43927A395D}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_4136"
+		Debug.AspNetCompiler.PhysicalPath = "ModelsBuilderified\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_4136\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_4136"
+		Release.AspNetCompiler.PhysicalPath = "ModelsBuilderified\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_4136\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "4136"
+		SlnRelativePath = "ModelsBuilderified\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4C451D1C-9567-4A3E-90EF-314CDB4935F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C451D1C-9567-4A3E-90EF-314CDB4935F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A22434C5-284C-4612-9C34-0B43927A395D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A22434C5-284C-4612-9C34-0B43927A395D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

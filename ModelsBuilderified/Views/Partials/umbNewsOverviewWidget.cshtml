@@ -1,0 +1,43 @@
+﻿@inherits UmbracoViewPage<UmbHomePage>
+@{
+
+}
+
+<!-- Blog -->
+<section class="is-blog">
+    <h2 class="major"><span>@Model.Archive.DisplayTitle</span></h2>
+    <div>
+        <div class="row">
+            <div class="9u">
+                <div class="content content-left">
+                    <!-- Featured Post -->
+                    <article class="is-post">
+                        <header>
+                            <h3><a href="@Model.FeaturedNewsItem.Url">@Model.FeaturedNewsItem.DisplayTitle</a></h3>
+                            <span class="byline">@Model.FeaturedNewsItem.Subheader</span>
+                            <ul class="meta">
+                                <li class="timestamp">@(Model.FeaturedNewsItem.DisplayDate.ToString("f"))</li>
+                            </ul>
+                        </header>
+
+                        @if (Model.FeaturedNewsItem.Image != null)
+                        {
+                            <a href="@Model.FeaturedNewsItem.Url" class="image image-full"><img src="@Model.FeaturedNewsItem.Image" alt="" /></a>
+                        }
+
+                        <p>@Model.FeaturedNewsItem.Extract</p>
+
+                        <a href="@Model.FeaturedNewsItem.Url" class="button">Continue Reading</a>
+                    </article>
+                    <!-- /Featured Post -->
+                </div>
+            </div>
+            <div class="3u">
+                <div class="sidebar">
+                    @{ Html.RenderPartial("umbLatestNewsWidget"); }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /Blog -->

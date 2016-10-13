@@ -1,0 +1,42 @@
+﻿@inherits DittoView<DittoDemo.ViewModels.TextPageViewModel>
+@{
+    Layout = "umbLayout.cshtml";  
+}
+<div id="main-wrapper">
+    <div id="main" class="container">
+        <div class="row">
+            <div class="9u skel-cell-mainContent">
+                <div class="content content-left">
+                    <!-- Content -->
+                    <article class="is-page-content">
+                        <header>
+                            <h2>@Model.View.Title</h2>
+                        </header>
+                        <section>
+                            @if (!Model.View.Image.IsNullOrWhiteSpace())
+                            {
+                                <span class="image image-full"><img src="@Model.View.Image" alt="" /></span>
+                            }
+
+                            @Model.View.BodyText
+                        </section>                           
+                    </article>
+                    <!-- /Content -->
+                </div>
+            </div>
+            <div class="3u">
+                <div class="sidebar">
+                    <!-- Sidebar -->
+                    @{ Html.RenderPartial("umbLatestNewsWidget"); }
+                    <!-- /Sidebar -->
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="12u">
+                @{ Html.RenderPartial("umbFeatures"); }
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Main -->

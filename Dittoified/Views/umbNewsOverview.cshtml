@@ -1,0 +1,51 @@
+﻿@inherits DittoView<DittoDemo.ViewModels.NewsOverviewViewModel>
+@{
+    Layout = "umbLayout.cshtml";
+}
+<!-- Main -->
+<div id="main-wrapper">
+    <div id="main" class="container">
+        <div class="row">
+            <div class="12u skel-cell-mainContent">
+                <div class="content">
+                    <!-- Content -->
+                    <article class="is-page-content">
+                        <header>
+                            <h2>@Model.View.Title</h2>
+                        </header>
+
+                        @foreach (var item in Model.View.NewsItems.Items)
+                        {
+                            <section>
+                                <h3><a href="@item.Url">@item.Title</a></h3>
+                                <span class="byline">@item.SubTitle</span>
+                                <ul class="meta">
+                                    <li class="timestamp">@item.Date.ToString("f")</li>
+                                </ul>
+
+                                @if (!item.Image.IsNullOrWhiteSpace())
+                                {
+                                    <a href="@item.Url" class="image image-full"><img src="@item.Image" alt="" /></a>
+                                }
+
+                                <p>@item.Extract</p>
+
+                                <a href="@item.Url" class="button">Continue Reading</a>
+                            </section>
+                        }
+                        
+                        @Html.Partial("umbPager", Model.View.NewsItems)
+
+                    </article>
+                    <!-- /Content -->
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="12u">
+                @{ Html.RenderPartial("umbFeatures"); }
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Main -->

@@ -1,0 +1,22 @@
+﻿@inherits UmbracoViewPage<IFeaturedSet>
+<!-- Features -->
+<section class="is-features">
+    <h2 class="major"><span>Wonderful featured pages</span></h2>
+    <div>
+        <div class="row">
+            @foreach (var feature in Model.FeaturedPages)
+            {
+                <div class="3u">
+                    <!-- Feature -->
+                    <section class="is-feature">
+                        <a href="@feature.Url" class="image image-full"><img src="@feature.Image" alt="" /></a>
+                        <h3><a href="@feature.Url">@feature.Name</a></h3>
+                        @feature.Extract
+                    </section>
+                    <!-- /Feature -->
+                </div>
+            }
+        </div>
+    </div>
+</section>
+<!-- /Features -->
