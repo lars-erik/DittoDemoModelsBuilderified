@@ -5,7 +5,7 @@ namespace Umbraco.Web.PublishedContentModels
 {
     public interface IAbout : IPublishedContent
     {
-        string AboutTitle { get; }
-        IHtmlString AboutText { get; }
+        string Title { get; }
+        IHtmlString Text { get; }
     }
 }

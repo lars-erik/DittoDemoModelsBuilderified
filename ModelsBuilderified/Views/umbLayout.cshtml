@@ -1,4 +1,4 @@
-﻿@inherits UmbracoViewPage<ILayout>
+﻿@inherits UmbracoViewPage<ISiteContent>
 @{
     Layout = null;
 }<!DOCTYPE html>
@@ -9,7 +9,7 @@
 -->
 <html>
 <head>
-    <title>@Model.DisplayTitle | @Model.SiteName</title>
+    <title>@Model.DisplayTitle | @Model.Home.SiteName</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -32,8 +32,8 @@
     <header id="header">
         <div class="logo">
             <div>
-                <h1><a href="/" id="logo">@Model.SiteName</a></h1>
-                <span class="byline">@Model.Byline</span>
+                <h1><a href="/" id="logo">@Model.Home.SiteName</a></h1>
+                <span class="byline">@Model.Home.Byline</span>
             </div>
         </div>
     </header>
@@ -46,18 +46,18 @@
     <footer id="footer" class="container">
         <div class="row">
             <div class="12u">
-                @{ Html.RenderPartial("umbAbout"); }
+                @{ Html.RenderPartial("umbAbout", Model.Home); }
             </div>
         </div>
         <div class="row">
             <div class="12u">
-                @{ Html.RenderPartial("umbSocial"); }
+                @{ Html.RenderPartial("umbSocial", Model.Home); }
             </div>
         </div>
         <div class="row">
             <!-- Copyright -->
             <div id="copyright">
-                &copy; @DateTime.Now.Year @Model.Copyright | Images: <a href="http://fotogrph.com">fotogrph</a> + <a href="http://iconify.it">Iconify.it</a> | Design: <a href="http://html5up.net/">HTML5 UP</a>
+                &copy; @DateTime.Now.Year @Model.Home.Copyright | Images: <a href="http://fotogrph.com">fotogrph</a> + <a href="http://iconify.it">Iconify.it</a> | Design: <a href="http://html5up.net/">HTML5 UP</a>
             </div>
             <!-- /Copyright -->
         </div>

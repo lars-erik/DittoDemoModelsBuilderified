@@ -27,14 +27,14 @@
             <div class="3u">
                 <div class="sidebar">
                     <!-- Sidebar -->
-                    @{ Html.RenderPartial("umbLatestNewsWidget"); }
+                    @{ Html.RenderPartial("umbLatestNewsWidget", Model.Home); }
                     <!-- /Sidebar -->
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="12u">
-                @{ Html.RenderPartial("umbFeatures"); }
+                @{ Html.RenderPartial("umbFeatures", Model.Home); }
             </div>
         </div>
     </div>

@@ -2,20 +2,62 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Umbraco.Core.Models;
 
 namespace Umbraco.Web.PublishedContentModels
 {
+    public interface INavigation : IPublishedContent
+    {
+        IEnumerable<ISiteContent> MenuItems { get; }
+    }
+
     /// <summary>
     /// Summary description for UmbHomePage
     /// </summary>
-    public partial class UmbHomePage : IBanner
+    public partial class UmbHomePage : 
+        ILayout, 
+        IFeaturedSet, 
+        IAbout, 
+        ISocialLinks, 
+        ILatestNews, 
+        IBanner
     {
-        public bool BannerIsVisible
-        {
-            get { return !HideBanner; }
-        }
+        /* 
+         * ABOUT 
+         */
+        string IAbout.Title { get { return AboutTitle; } }
+        IHtmlString IAbout.Text { get { return AboutText; } }
 
-        public override IEnumerable<UmbTextPage> FeaturedPages
+        /*
+         * BANNER
+         */
+
+        bool IBanner.IsVisible { get { return !HideBanner; } }
+        string IBanner.BackgroundImage { get { return (BannerBackgroundImage ?? "").ToString(); } }
+        string IBanner.Header { get { return BannerHeader;} }
+        string IBanner.Link { get { return BannerLink.Url; } }
+        string IBanner.LinkText { get { return BannerLinkText; } }
+        string IBanner.Subheader { get { return BannerSubheader; } }
+
+        /*
+         * NAVIGATION
+         */
+
+        public IEnumerable<ISiteContent> MenuItems
+        {
+            get
+            {
+                return Children
+                    .OfType<ISiteContent>()
+                    .Where(c => c.IsVisible());
+            }
+        } 
+
+        /*
+         * FEATURES
+         */
+
+        public IEnumerable<UmbTextPage> FeaturedPages
         {
             get
             {
@@ -24,6 +66,10 @@ namespace Umbraco.Web.PublishedContentModels
                     .Where(p => p.FeaturedPage);
             }
         }
+
+        /*
+         * NEWS
+         */
 
         public UmbNewsOverview Archive
         {

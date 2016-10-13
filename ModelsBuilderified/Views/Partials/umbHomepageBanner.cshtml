@@ -1,15 +1,15 @@
 ﻿@inherits UmbracoViewPage<IBanner>
 
-@if (Model.BannerIsVisible)
+@if (Model.IsVisible)
 {
     <!-- Banner -->
-    <div id="banner-wrapper" style="background: url('@Model.BannerBackgroundImage') center center no-repeat;">
+    <div id="banner-wrapper" style="background: url('@Model.BackgroundImage') center center no-repeat;">
         <section id="banner">
-            <h2>@Model.BannerHeader</h2>
-            <span class="byline">@Model.BannerSubheader</span>
-			@if(Model.BannerLink != null)
+            <h2>@Model.Header</h2>
+            <span class="byline">@Model.Subheader</span>
+			@if(Model.Link != null)
 			{
-            	<a href="@Model.BannerLink.Url" class="button">@Model.BannerLinkText</a>
+            	<a href="@Model.Link" class="button">@Model.LinkText</a>
             }
         </section>
     </div>
