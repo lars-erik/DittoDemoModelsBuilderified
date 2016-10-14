@@ -16,8 +16,6 @@
 
                         @foreach (var item in Model.Children<UmbNewsItem>())
                         {
-                            // TODO: Paging
-
                             <section>
                                 <h3><a href="@item.Url">@item.DisplayTitle</a></h3>
                                 <span class="byline">@item.Subheader</span>
