@@ -2,15 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Umbraco.Core.Models;
 
 namespace Umbraco.Web.PublishedContentModels
 {
-    public interface INavigation : IPublishedContent
-    {
-        IEnumerable<ISiteContent> MenuItems { get; }
-    }
-
     /// <summary>
     /// Summary description for UmbHomePage
     /// </summary>
@@ -47,9 +41,12 @@ namespace Umbraco.Web.PublishedContentModels
         {
             get
             {
-                return Children
-                    .OfType<ISiteContent>()
-                    .Where(c => c.IsVisible());
+                return new[] {this}
+                    .Union(
+                        Children
+                        .OfType<ISiteContent>()
+                        .Where(c => c.IsVisible())
+                    );
             }
         } 
 
