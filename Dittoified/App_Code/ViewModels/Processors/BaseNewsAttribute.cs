@@ -4,22 +4,22 @@ using System.Linq;
 using Our.Umbraco.Ditto;
 using Umbraco.Core.Models;
 using Umbraco.Web;
+using Umbraco.Web.PublishedContentModels;
 
 namespace DittoDemo.Ditto.Processors
 {
     public abstract class BaseNewsAttribute : DittoProcessorAttribute
     {
-        protected IEnumerable<IPublishedContent> GetNews()
+        protected IEnumerable<UmbNewsItem> GetNews()
         {
-            var content = Value as IPublishedContent;
-            if (content == null) return Enumerable.Empty<IPublishedContent>();
+            var content = Value as UmbMaster;
+            if (content == null) return Enumerable.Empty<UmbNewsItem>();
 
-            var homePage = content.AncestorsOrSelf(1).First();
-            var newsArchive = homePage.Children.FirstOrDefault(x => x.DocumentTypeAlias == "umbNewsOverview");
-            if (newsArchive == null) return Enumerable.Empty<IPublishedContent>();
+            var newsArchive = content.Home.FirstChild<UmbNewsOverview>();
+            if (newsArchive == null) return Enumerable.Empty<UmbNewsItem>();
 
-            return newsArchive.Children.Where(x => x.DocumentTypeAlias == "umbNewsItem")
-                .OrderByDescending(x => x.Get<DateTime>("publishDate"))
+            return newsArchive.Children<UmbNewsItem>()
+                .OrderByDescending(x => x.PublishDate)
                 .ThenByDescending(x => x.CreateDate);
         }
     }

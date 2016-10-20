@@ -3,6 +3,7 @@ using DittoDemo.Models;
 using Our.Umbraco.Ditto;
 using Umbraco.Core.Models;
 using Umbraco.Web;
+using Umbraco.Web.PublishedContentModels;
 
 namespace DittoDemo.Ditto.Processors
 {
@@ -10,11 +11,10 @@ namespace DittoDemo.Ditto.Processors
     {
         public override object ProcessValue()
         {
-            var content = Value as IPublishedContent;
+            var content = Value as UmbMaster;
             if (content == null) return Enumerable.Empty<NavLink>();
 
-            var homePage = content.AncestorsOrSelf(1).First();
-            return new[] { homePage }.Union(homePage.Children.Where(x => x.IsVisible()));
+            return new[] { content.Home }.Union(content.Home.Children.Where(x => x.IsVisible()));
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Our.Umbraco.Ditto;
 using Umbraco.Core.Models;
 using Umbraco.Web;
+using Umbraco.Web.PublishedContentModels;
 
 namespace DittoDemo.Ditto.Processors
 {
@@ -8,10 +9,9 @@ namespace DittoDemo.Ditto.Processors
     {
         public override object ProcessValue()
         {
-            var content = Value as IPublishedContent;
+            var content = Value as UmbMaster;
             if (content == null) return null;
-
-            return content.AncestorOrSelf(1);
+            return content.Home;
         }
     }
 }

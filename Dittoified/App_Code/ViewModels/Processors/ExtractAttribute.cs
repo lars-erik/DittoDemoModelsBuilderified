@@ -2,19 +2,25 @@
 using Umbraco.Core;
 using Umbraco.Core.Models;
 using Umbraco.Web;
+using Umbraco.Web.PublishedContentModels;
 
 namespace DittoDemo.Ditto.Processors
 {
     public class ExtractAttribute : DittoProcessorAttribute
     {
+        public int Length { get; set; }
+
+        public ExtractAttribute(int length = 100)
+        {
+            Length = length;
+        }
+
         public override object ProcessValue()
         {
-            var content = Value as IPublishedContent;
+            var content = Value as IExtractable;
             if (content == null) return null;
 
-            if (content.HasValue("extract")) return content.Get<string>("extract");
-            if (content.HasValue("bodyText")) return content.Get<string>("bodyText").StripHtml().Truncate(100);
-            return null;
+            return content.Extract(Length);
         }
     }
 }

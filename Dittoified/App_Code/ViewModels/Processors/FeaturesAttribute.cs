@@ -4,6 +4,7 @@ using DittoDemo.Models;
 using Our.Umbraco.Ditto;
 using Umbraco.Core.Models;
 using Umbraco.Web;
+using Umbraco.Web.PublishedContentModels;
 
 namespace DittoDemo.Ditto.Processors
 {
@@ -11,12 +12,11 @@ namespace DittoDemo.Ditto.Processors
     {
         public override object ProcessValue()
         {
-            var content = Value as IPublishedContent;
-            if (content == null) return Enumerable.Empty<NewsItemLink>();
+            var content = Value as UmbMaster;
+            if (content == null) return Enumerable.Empty<UmbTextPage>();
 
-            var homePage = content.AncestorOrSelf(1);
-            return homePage.Children.Where(x => x.DocumentTypeAlias == "umbTextPage"
-                && x.Get("featuredPage", defaultValue:false))
+            return content.Home.Children<UmbTextPage>()
+                .Where(x => x.FeaturedPage)
                 .OrderBy(x => new Guid())
                 .Take(4);
         }

@@ -11,7 +11,7 @@ namespace DittoDemo.Models
 
         public string Image { get; set; }
 
-        [Extract]
+        [Extract(200)]
         public HtmlString Extract { get; set; }
     }
 
