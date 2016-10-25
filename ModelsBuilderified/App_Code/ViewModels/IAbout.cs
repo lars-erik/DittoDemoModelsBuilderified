@@ -3,7 +3,7 @@ using Umbraco.Core.Models;
 
 namespace Umbraco.Web.PublishedContentModels
 {
-    public interface IAbout : IPublishedContent
+    public interface IAbout
     {
         string Title { get; }
         IHtmlString Text { get; }
