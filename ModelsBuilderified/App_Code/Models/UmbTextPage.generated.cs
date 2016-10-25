@@ -18,58 +18,58 @@ using Umbraco.Web;
 using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
-namespace Umbraco.Web.PublishedContentModels
+namespace ModelsBuilderified.Models
 {
-    /// <summary>Text Page</summary>
-    [PublishedContentModel("umbTextPage")]
-    public partial class UmbTextPage : UmbMaster
-    {
-    #pragma warning disable 0109 // new is redundant
-        public new const string ModelTypeAlias = "umbTextPage";
-        public new const PublishedItemType ModelItemType = PublishedItemType.Content;
-    #pragma warning restore 0109
+	/// <summary>Text Page</summary>
+	[PublishedContentModel("umbTextPage")]
+	public partial class UmbTextPage : UmbMaster
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "umbTextPage";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
 
-        public UmbTextPage(IPublishedContent content)
-            : base(content)
-        { }
+		public UmbTextPage(IPublishedContent content)
+			: base(content)
+		{ }
 
-    #pragma warning disable 0109 // new is redundant
-        public new static PublishedContentType GetModelContentType()
-        {
-            return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
-        }
-    #pragma warning restore 0109
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
 
-        public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<UmbTextPage, TValue>> selector)
-        {
-            return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
-        }
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<UmbTextPage, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
 
-        ///<summary>
-        /// Content
-        ///</summary>
-        [ImplementPropertyType("bodyText")]
-        public IHtmlString BodyText
-        {
-            get { return this.GetPropertyValue<IHtmlString>("bodyText"); }
-        }
+		///<summary>
+		/// Content
+		///</summary>
+		[ImplementPropertyType("bodyText")]
+		public IHtmlString BodyText
+		{
+			get { return this.GetPropertyValue<IHtmlString>("bodyText"); }
+		}
 
-        ///<summary>
-        /// Featured Page?: Is this a page that should be featured on the home page?
-        ///</summary>
-        [ImplementPropertyType("featuredPage")]
-        public bool FeaturedPage
-        {
-            get { return this.GetPropertyValue<bool>("featuredPage"); }
-        }
+		///<summary>
+		/// Featured Page?: Is this a page that should be featured on the home page?
+		///</summary>
+		[ImplementPropertyType("featuredPage")]
+		public bool FeaturedPage
+		{
+			get { return this.GetPropertyValue<bool>("featuredPage"); }
+		}
 
-        ///<summary>
-        /// Image
-        ///</summary>
-        [ImplementPropertyType("image")]
-        public object Image
-        {
-            get { return this.GetPropertyValue("image"); }
-        }
-    }
+		///<summary>
+		/// Image
+		///</summary>
+		[ImplementPropertyType("image")]
+		public object Image
+		{
+			get { return this.GetPropertyValue("image"); }
+		}
+	}
 }
