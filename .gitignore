@@ -243,4 +243,7 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
-/DittoDemoMBfd.zip
+
+/*.zip
+**/*.DotSettings.*
+App_Data/
