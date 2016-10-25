@@ -3,8 +3,8 @@ using Umbraco.Core.Models;
 
 namespace ModelsBuilderified.Models
 {
-    public interface INavigation : IPublishedContent
+    public interface INavigation
     {
-        IEnumerable<ISiteContent> MenuItems { get; }
+        IEnumerable<INavigationContent> MenuItems { get; }
     }
 }

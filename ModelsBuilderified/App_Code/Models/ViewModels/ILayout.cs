@@ -2,7 +2,7 @@
 
 namespace ModelsBuilderified.Models
 {
-    public interface ILayout : IPublishedContent
+    public interface ILayout : INavigation, IAbout
     {
         string SiteName { get; }
         string Byline { get; }

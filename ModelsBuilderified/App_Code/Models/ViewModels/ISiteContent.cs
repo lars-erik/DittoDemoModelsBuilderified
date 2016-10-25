@@ -2,9 +2,9 @@
 
 namespace ModelsBuilderified.Models
 {
-    public interface ISiteContent : IPublishedContent
+    public interface ISiteContent
     {
-        UmbHomePage Home { get; }
+        ILayout Layout { get; }
 
         string DisplayTitle { get; }
     }

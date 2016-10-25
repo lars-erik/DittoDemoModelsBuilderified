@@ -3,20 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Umbraco.Core;
+using Umbraco.Web;
 
 namespace ModelsBuilderified.Models
 {
-    public partial class UmbMaster : ISiteContent, INavigation
+    public partial class UmbMaster : ISiteContent, INavigationContent
     {
-        private UmbHomePage home = null;
+        private ILayout layout = null;
 
-        public UmbHomePage Home
+        public ILayout Layout
         {
             get
             {
-                if (home == null)
-                    home = this.AncestorOrSelf<UmbHomePage>();
-                return home;
+                if (layout == null)
+                    layout = this.AncestorOrSelf<UmbHomePage>();
+                return layout;
             }
         }
 
@@ -25,9 +26,19 @@ namespace ModelsBuilderified.Models
             get { return Title.IfNullOrWhiteSpace(Name); }
         }
 
-        IEnumerable<ISiteContent> INavigation.MenuItems
+        public bool IsVisible
         {
-            get { return home.MenuItems; }
+            get { return this.IsVisible(); }
+        }
+
+        bool INavigationContent.IsActive
+        {
+            get { return UmbracoContext.Current.PageId == Id; }
+        }
+
+        string INavigationContent.Target
+        {
+            get { return Url.StartsWith("/") ? "_top" : "_blank"; }
         }
     }
 }

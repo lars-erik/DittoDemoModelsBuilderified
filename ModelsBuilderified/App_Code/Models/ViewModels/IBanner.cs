@@ -2,7 +2,7 @@ using Umbraco.Core.Models;
 
 namespace ModelsBuilderified.Models
 {
-    public interface IBanner : IPublishedContent
+    public interface IBanner
     {
         bool IsVisible { get; }
         string BackgroundImage { get; }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Umbraco.Web;
 
 namespace ModelsBuilderified.Models
 {
@@ -37,15 +38,15 @@ namespace ModelsBuilderified.Models
          * NAVIGATION
          */
 
-        public IEnumerable<ISiteContent> MenuItems
+        public IEnumerable<INavigationContent> MenuItems
         {
             get
             {
                 return new[] {this}
                     .Union(
                         Children
-                        .OfType<ISiteContent>()
-                        .Where(c => c.IsVisible())
+                        .OfType<INavigationContent>()
+                        .Where(c => c.IsVisible)
                     );
             }
         } 

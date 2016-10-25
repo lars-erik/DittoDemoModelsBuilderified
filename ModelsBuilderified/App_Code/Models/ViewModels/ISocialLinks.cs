@@ -2,7 +2,7 @@
 
 namespace ModelsBuilderified.Models
 {
-    public interface ISocialLinks : IPublishedContent
+    public interface ISocialLinks
     {
         string FacebookLink { get; }
         string TwitterLink { get; }
