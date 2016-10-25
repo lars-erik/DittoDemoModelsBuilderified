@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Umbraco.Web.PublishedContentModels
+namespace ModelsBuilderified.Models
 {
     /// <summary>
     /// Summary description for UmbHomePage

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Umbraco.Web.PublishedContentModels
+namespace ModelsBuilderified.Models
 {
     public interface IFeaturedSet
     {

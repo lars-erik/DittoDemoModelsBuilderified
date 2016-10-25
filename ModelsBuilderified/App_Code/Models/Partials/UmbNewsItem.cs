@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using Umbraco.Core;
 
-namespace Umbraco.Web.PublishedContentModels
+namespace ModelsBuilderified.Models
 {
     public partial class UmbNewsItem
     {

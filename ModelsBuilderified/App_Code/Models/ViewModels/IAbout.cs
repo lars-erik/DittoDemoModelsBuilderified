@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using Umbraco.Core.Models;
 
-namespace Umbraco.Web.PublishedContentModels
+namespace ModelsBuilderified.Models
 {
     public interface IAbout
     {

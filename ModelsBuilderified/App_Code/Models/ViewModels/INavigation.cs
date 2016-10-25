@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Umbraco.Core.Models;
 
-namespace Umbraco.Web.PublishedContentModels
+namespace ModelsBuilderified.Models
 {
     public interface INavigation : IPublishedContent
     {

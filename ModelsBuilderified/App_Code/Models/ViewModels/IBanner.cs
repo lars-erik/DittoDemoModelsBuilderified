@@ -1,6 +1,6 @@
 using Umbraco.Core.Models;
 
-namespace Umbraco.Web.PublishedContentModels
+namespace ModelsBuilderified.Models
 {
     public interface IBanner : IPublishedContent
     {
