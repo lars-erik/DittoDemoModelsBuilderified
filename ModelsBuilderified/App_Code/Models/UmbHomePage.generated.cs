@@ -67,9 +67,9 @@ namespace ModelsBuilderified.Models
 		/// Banner background image
 		///</summary>
 		[ImplementPropertyType("bannerBackgroundImage")]
-		public object BannerBackgroundImage
+		public string BannerBackgroundImage
 		{
-			get { return this.GetPropertyValue("bannerBackgroundImage"); }
+			get { return this.GetPropertyValue<string>("bannerBackgroundImage"); }
 		}
 
 		///<summary>

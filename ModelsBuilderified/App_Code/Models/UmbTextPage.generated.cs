@@ -67,9 +67,9 @@ namespace ModelsBuilderified.Models
 		/// Image
 		///</summary>
 		[ImplementPropertyType("image")]
-		public object Image
+		public string Image
 		{
-			get { return this.GetPropertyValue("image"); }
+			get { return this.GetPropertyValue<string>("image"); }
 		}
 	}
 }

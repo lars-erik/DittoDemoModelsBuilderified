@@ -13,7 +13,7 @@
                             <h2>@Model.DisplayTitle</h2>
                         </header>
                         <section>
-                            @if ((Model.Image ?? "").ToString().IsNullOrWhiteSpace())
+                            @if (!Model.Image.IsNullOrWhiteSpace())
                             {
                                 <span class="image image-full"><img src="@Model.Image" alt="" /></span>
                             }

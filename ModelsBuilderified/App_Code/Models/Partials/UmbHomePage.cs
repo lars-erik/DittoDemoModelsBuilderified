@@ -17,6 +17,11 @@ namespace ModelsBuilderified.Models
         ILatestNews, 
         IBanner
     {
+        /*
+         * LAYOUT
+         */ 
+        string ILayout.SiteUrl { get { return Url; } }
+
         /* 
          * ABOUT 
          */
