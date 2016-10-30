@@ -10,7 +10,7 @@
   <Class Name="ModelsBuilderified.Models.UmbNewsOverview" Collapsed="true">
     <Position X="0.5" Y="4.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAEAAAAAAAAAAACAAAABAAAACAACBAAAAAAAAAAAAAE=</HashCode>
+      <HashCode>AAAAAAAAAAAAAACAAAABAAAACAACBAAAAAAAAAAAAAE=</HashCode>
       <FileName>App_Code\Models\Partials\UmbNewsOverview.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -21,6 +21,14 @@
       <HashCode>AAgAAgAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAEAAQAAI=</HashCode>
       <FileName>App_Code\Models\ViewModels\PageModel.cs</FileName>
     </TypeIdentifier>
+  </Class>
+  <Class Name="ModelsBuilderified.Models.UmbNewsItem" Collapsed="true">
+    <Position X="4" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAQACACAAAAAIACAACBBAAAAAAAQAAAAA=</HashCode>
+      <FileName>App_Code\Models\Partials\UmbNewsItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Interface Name="ModelsBuilderified.Models.INewsArchivePaged">
     <Position X="0.5" Y="2.75" Width="2" />

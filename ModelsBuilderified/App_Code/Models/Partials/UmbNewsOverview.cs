@@ -7,13 +7,5 @@ namespace ModelsBuilderified.Models
 { 
     public partial class UmbNewsOverview : INewsArchive
     {
-        public IEnumerable<INewsItem> News
-        {
-            get
-            {
-                return Children.OfType<INewsItem>()
-                    .OrderByDescending(n => n.DisplayDate);
-            }
-        }
     }
 }

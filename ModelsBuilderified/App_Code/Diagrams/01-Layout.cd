@@ -10,8 +10,11 @@
     <Position X="0.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAEECAAAAAAAAAGAACBAgIABAACAAAABA=</HashCode>
-      <FileName>App_Code\Models\Partials\UmbMaster.cs</FileName>
+      <FileName>App_Code\Models\Partials\UmbMaster.NavigationContent.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Layout" />
+    </ShowAsAssociation>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="ModelsBuilderified.Models.UmbHomePage" Collapsed="true">
@@ -25,7 +28,7 @@
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>SABAQAAJCAABABjAEAAUgACAKAECBEgAAgBCQAgIAAQ=</HashCode>
+      <HashCode>SABAQAAJCAABABjAUAAUgACAKAECBEgAAgBCQAgIAAQ=</HashCode>
       <FileName>App_Code\Models\Partials\UmbHomePage.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.481" />
