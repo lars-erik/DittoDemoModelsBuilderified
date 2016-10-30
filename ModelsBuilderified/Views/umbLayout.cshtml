@@ -38,7 +38,7 @@
         </div>
     </header>
     <!-- /Header -->
-    @{ Html.RenderPartial("umbTopNavigation", Model.Layout); }
+    @Html.Partial("umbTopNavigation", Model.Layout)
 
     @RenderBody()
 

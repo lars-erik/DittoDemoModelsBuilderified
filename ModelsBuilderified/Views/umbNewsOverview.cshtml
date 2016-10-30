@@ -1,7 +1,10 @@
-﻿@inherits UmbracoViewPage<INewsArchive>
+﻿@inherits UmbracoViewPage<INewsArchivePaged>
 @{
     Layout = "umbLayout.cshtml";
 }
+
+<h1>@ViewBag.Message</h1>
+
 <!-- Main -->
 <div id="main-wrapper">
     <div id="main" class="container">
@@ -13,8 +16,7 @@
                         <header>
                             <h2>@Model.DisplayTitle</h2>
                         </header>
-
-                        @foreach (var item in Model.News)
+                        @foreach (var item in Model.NewsPage)
                         {
                             <section>
                                 <h3><a href="@item.Url">@item.DisplayTitle</a></h3>
@@ -22,17 +24,18 @@
                                 <ul class="meta">
                                     <li class="timestamp">@item.DisplayDate.ToString("f")</li>
                                 </ul>
-
                                 @if (string.IsNullOrWhiteSpace(item.Image as string) == false)
                                 {
                                     <a href="@item.Url" class="image image-full"><img src="@item.Image" alt="" /></a>
                                 }
 
                                 <p>@item.Extract</p>
-
                                 <a href="@item.Url" class="button">Continue Reading</a>
                             </section>
                         }
+
+                        @Html.Partial("umbPager", Model.PageModel)
+
                     </article>
                     <!-- /Content -->
                 </div>
@@ -40,7 +43,7 @@
         </div>
         <div class="row">
             <div class="12u">
-                @{ Html.RenderPartial("umbFeatures", Model.Layout); }
+                @Html.Partial("umbFeatures", Model.Layout)
             </div>
         </div>
     </div>
