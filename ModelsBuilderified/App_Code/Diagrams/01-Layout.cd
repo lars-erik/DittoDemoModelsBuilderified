@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="Model">
+    <Position X="0.521" Y="0.958" Height="0.354" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Implementation">
+    <Position X="0.51" Y="3.792" Height="0.333" Width="1.794" />
+  </Comment>
+  <Class Name="ModelsBuilderified.Models.UmbMaster" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEECAAAAAAAAAGAACBAgIABAACAAAABA=</HashCode>
+      <FileName>App_Code\Models\Partials\UmbMaster.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ModelsBuilderified.Models.UmbHomePage" Collapsed="true">
+    <Position X="3" Y="7.5" Width="1.5" />
+    <InheritanceLine Type="ModelsBuilderified.Models.UmbMaster" FixedToPoint="true">
+      <Path>
+        <Point X="1.25" Y="6.441" />
+        <Point X="1.25" Y="7.125" />
+        <Point X="3.312" Y="7.125" />
+        <Point X="3.312" Y="7.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>SABAQAAJCAABABjAEAAUgACAKAECBEgAAgBCQAgIAAQ=</HashCode>
+      <FileName>App_Code\Models\Partials\UmbHomePage.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.481" />
+  </Class>
+  <Class Name="Umbraco.Core.Models.PublishedContent.PublishedContentModel" Collapsed="true">
+    <Position X="0.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Interface Name="ModelsBuilderified.Models.ILayout">
+    <Position X="3" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABABAAAAAAAAAAAAAAEAEAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>App_Code\Models\ViewModels\ILayout.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ModelsBuilderified.Models.ISiteContent">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAICAAAAAAAAAA=</HashCode>
+      <FileName>App_Code\Models\ViewModels\ISiteContent.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Layout" />
+    </ShowAsAssociation>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

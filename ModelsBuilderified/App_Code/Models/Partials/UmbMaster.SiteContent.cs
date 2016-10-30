@@ -7,7 +7,7 @@ using Umbraco.Web;
 
 namespace ModelsBuilderified.Models
 {
-    public partial class UmbMaster : ISiteContent, INavigationContent
+    public partial class UmbMaster : ISiteContent
     {
         private ILayout layout = null;
 
@@ -26,19 +26,5 @@ namespace ModelsBuilderified.Models
             get { return Title.IfNullOrWhiteSpace(Name); }
         }
 
-        public bool IsVisible
-        {
-            get { return this.IsVisible(); }
-        }
-
-        bool INavigationContent.IsActive
-        {
-            get { return UmbracoContext.Current.PageId == Id; }
-        }
-
-        string INavigationContent.Target
-        {
-            get { return Url.StartsWith("/") ? "_top" : "_blank"; }
-        }
     }
 }

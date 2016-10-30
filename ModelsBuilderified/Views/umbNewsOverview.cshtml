@@ -1,4 +1,4 @@
-﻿@inherits UmbracoViewPage<UmbNewsOverview>
+﻿@inherits UmbracoViewPage<INewsArchive>
 @{
     Layout = "umbLayout.cshtml";
 }
@@ -14,7 +14,7 @@
                             <h2>@Model.DisplayTitle</h2>
                         </header>
 
-                        @foreach (var item in Model.Children<UmbNewsItem>())
+                        @foreach (var item in Model.News)
                         {
                             <section>
                                 <h3><a href="@item.Url">@item.DisplayTitle</a></h3>

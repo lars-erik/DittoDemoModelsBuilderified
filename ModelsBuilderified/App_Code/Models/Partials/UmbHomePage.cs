@@ -12,7 +12,6 @@ namespace ModelsBuilderified.Models
     public partial class UmbHomePage : 
         ILayout, 
         IFeaturedSet, 
-        IAbout, 
         ISocialLinks, 
         ILatestNews, 
         IBanner
@@ -40,23 +39,6 @@ namespace ModelsBuilderified.Models
         string IBanner.Subheader { get { return BannerSubheader; } }
 
         /*
-         * NAVIGATION
-         */
-
-        public IEnumerable<INavigationContent> MenuItems
-        {
-            get
-            {
-                return new[] {this}
-                    .Union(
-                        Children
-                        .OfType<INavigationContent>()
-                        .Where(c => c.IsVisible)
-                    );
-            }
-        } 
-
-        /*
          * FEATURES
          */
 
@@ -74,23 +56,23 @@ namespace ModelsBuilderified.Models
          * NEWS
          */
 
-        public UmbNewsOverview Archive
+        public INewsArchive Archive
         {
             get { return Children.OfType<UmbNewsOverview>().First(); }
         }
 
-        public IEnumerable<UmbNewsItem> LatestNewsItems
+        public IEnumerable<INewsItem> LatestNewsItems
         {
             get
             {
                 return Archive
-                    .Children<UmbNewsItem>()
+                    .News
                     .OrderByDescending(n => n.DisplayDate)
                     .Take(5);
             }
         }
 
-        public UmbNewsItem FeaturedNewsItem
+        public INewsItem FeaturedNewsItem
         {
             get { return LatestNewsItems.First(); }
         }

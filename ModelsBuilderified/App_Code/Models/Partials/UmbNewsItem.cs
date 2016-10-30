@@ -6,7 +6,7 @@ using Umbraco.Core;
 
 namespace ModelsBuilderified.Models
 {
-    public partial class UmbNewsItem
+    public partial class UmbNewsItem : INewsItem
     {
         public DateTime DisplayDate
         {

@@ -7,5 +7,6 @@ namespace ModelsBuilderified.Models
         ILayout Layout { get; }
 
         string DisplayTitle { get; }
+        string Url { get; }
     }
 }

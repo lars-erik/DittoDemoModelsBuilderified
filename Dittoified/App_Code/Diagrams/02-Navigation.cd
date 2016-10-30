@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DittoDemo.ViewModels.TopNavigationViewModel">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Code\ViewModels\TopNavigationViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="MenuItems" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="DittoDemo.Models.NavLink">
+    <Position X="3.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Code\Models\NavLink.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DittoDemo.Models.Link">
+    <Position X="3.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAACAAAQAAAAAA=</HashCode>
+      <FileName>App_Code\Models\Link.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DittoDemo.Ditto.Processors.UrlTargetAttribute" Collapsed="true">
+    <Position X="5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>App_Code\ViewModels\Processors\UrlTargetAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DittoDemo.Ditto.Processors.ActiveNavLinkAttribute" Collapsed="true">
+    <Position X="5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>App_Code\ViewModels\Processors\ActiveNavLinkAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DittoDemo.Ditto.Processors.MainNavAttribute" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>App_Code\ViewModels\Processors\MainNavAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -4,7 +4,8 @@ namespace ModelsBuilderified.Models
 {
     public interface ILatestNews
     {
-        UmbNewsOverview Archive { get; }
-        IEnumerable<UmbNewsItem> LatestNewsItems { get; }
+        INewsArchive Archive { get; }
+        IEnumerable<INewsItem> LatestNewsItems { get; }
+        INewsItem FeaturedNewsItem { get; }
     }
 }
