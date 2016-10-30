@@ -11,12 +11,12 @@ namespace ModelsBuilderified.Controllers
 {
     public class UmbNewsOverviewController : RenderMvcController
     {
-        public ActionResult Index(RenderModel<UmbNewsOverview> model)
+        public ActionResult Index(RenderModel<UmbNewsOverview> model, long p = 1)
         {
             var pageModel = new PageModel
             {
                 PageSize = 2,
-                CurrentPage = Convert.ToInt64(Request["p"] ?? "1"),
+                CurrentPage = p,
                 TotalItems = model.Content.News.Count()
             };
 

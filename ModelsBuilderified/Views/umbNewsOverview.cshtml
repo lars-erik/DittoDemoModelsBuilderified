@@ -2,9 +2,6 @@
 @{
     Layout = "umbLayout.cshtml";
 }
-
-<h1>@ViewBag.Message</h1>
-
 <!-- Main -->
 <div id="main-wrapper">
     <div id="main" class="container">
@@ -24,7 +21,8 @@
                                 <ul class="meta">
                                     <li class="timestamp">@item.DisplayDate.ToString("f")</li>
                                 </ul>
-                                @if (string.IsNullOrWhiteSpace(item.Image as string) == false)
+
+                                @if (!item.Image.IsNullOrWhiteSpace())
                                 {
                                     <a href="@item.Url" class="image image-full"><img src="@item.Image" alt="" /></a>
                                 }

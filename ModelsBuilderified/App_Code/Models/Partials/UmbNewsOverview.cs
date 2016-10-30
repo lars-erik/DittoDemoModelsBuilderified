@@ -9,7 +9,11 @@ namespace ModelsBuilderified.Models
     {
         public IEnumerable<INewsItem> News
         {
-            get { return Children.OfType<INewsItem>(); }
+            get
+            {
+                return Children.OfType<INewsItem>()
+                    .OrderByDescending(n => n.DisplayDate);
+            }
         }
     }
 }

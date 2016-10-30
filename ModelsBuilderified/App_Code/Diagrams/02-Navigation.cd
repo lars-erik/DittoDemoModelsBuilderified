@@ -14,6 +14,9 @@
       <HashCode>SABAQAAJCAABABjAUAAUgACAKAECBEgAAgBCQAgIAAQ=</HashCode>
       <FileName>App_Code\Models\Partials\UmbHomePage.cs</FileName>
     </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="INavigation.MenuItems" />
+    </ShowAsCollectionAssociation>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="ModelsBuilderified.Models.UmbMaster" Collapsed="true">
